@@ -1,0 +1,7 @@
+<a target="_blank" href="{{ gif.url }}" class="nostyle">
+	<img src="{{ gif.images.fixed_width.url }}" 
+		alt="{{ gif.title }}" 
+		class="content background-{{ colourClass }}"
+		[style.height.px]="gif.images.fixed_width.height"
+		[style.width.px]="gif.images.fixed_width.width" />
+</a>

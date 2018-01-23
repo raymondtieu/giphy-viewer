@@ -1,0 +1,11 @@
+<h1>Trending Now</h1>
+
+<app-gifs 
+	[gifs]="gifs"
+	[searchTerm]=""
+	[recordLimit]="recordLimit"
+	[totalGifs]="totalGifs"
+	[hasLoaded]="hasLoaded"
+	(loadMore)="onLoadMore()">
+</app-gifs>
+

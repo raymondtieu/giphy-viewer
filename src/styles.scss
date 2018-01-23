@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+$background-color: #111;
+$btn-color: #333;
+$btn__primary-color: #29b6f6;
+$btn-width: 120px;
+$btn-height: 40px;
+
+body {
+	background: $background-color;
+	color: white;
+	padding-bottom: 40px;
+	font-family: 'Roboto';
+}
+
+.btn {
+	padding: 5px;
+	width: $btn-width;
+	height: $btn-height;
+	border: 0;
+	background: $btn-color;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.btn.btn__primary {
+	background: $btn__primary-color;
+	color: white;
+}
+
+a.nostyle {
+	color: inherit;
+	text-decoration: inherit;
+}

@@ -1,0 +1,11 @@
+<h1 class="search-results">Showing results for "<span [innerHtml]="searchTerm"></span>"</h1>
+<p class="search-results">(<span [innerHtml]="totalGifs"></span> GIFs)</p>
+
+<app-gifs 
+	[gifs]="gifs"
+	[searchTerm]="searchTerm"
+	[recordLimit]="recordLimit"
+	[totalGifs]="totalGifs"
+	[hasLoaded]="hasLoaded"
+	(loadMore)="onLoadMore()">
+</app-gifs>

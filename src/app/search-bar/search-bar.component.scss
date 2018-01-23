@@ -1,0 +1,22 @@
+$search-bar-height: 40px;
+
+/* Use host because component tag should be a flex child */
+:host {
+	flex: 1;
+}
+
+.search-bar {
+	display: flex;
+}
+
+.search-bar .search-term {
+	flex: 1;
+	height: $search-bar-height;
+	outline: none;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.search-bar .btn {
+	flex: 0 0 auto;
+}

@@ -1,0 +1,4 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)" novalidate class="search-bar form-group">
+	<input type="text" class="search-term" name="searchTerm" placeholder="Search for GIFs" ngModel>
+	<button type="submit" class="btn btn__primary">Search</button>
+</form>

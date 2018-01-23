@@ -1,0 +1,8 @@
+$colours: red, blue, aqua, yellow, green;
+
+/* Create classes for different background colours. */
+@each $colour in $colours {
+	.content.background-#{$colour} {
+		background: lighten($colour, 10%);
+	}
+}

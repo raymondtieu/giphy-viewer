@@ -1,0 +1,48 @@
+<!-- 
+	Show a loading spinner when component is first loaded or when a
+	new search is being conducted.
+-->
+<div [hidden]="gifs.length > 0 || hasLoaded">
+	<div class="loading-spinner initial"></div>
+</div>
+
+<div *ngIf="gifs.length > 0 && hasLoaded">
+	<p>Showing <span [innerHtml]="gifs.length"></span> GIFs</p>
+	
+	<!--
+		Gifs are displayed in unordered lists placed side by side. This is a
+		design workaround to display gifs without the gaps that would be
+		present if they were displayed in a row due to the varying heights.
+	-->
+	<div class="gif-container">
+		<ul class="list-col" *ngFor="let col of gifColumns">
+			<li class="item" *ngFor="let gif of col">
+				<app-gif [gif]="gif"></app-gif>
+			</li>
+		</ul>
+	</div>
+
+	<!-- 
+		Show a load more button on the first visit of the page. The load
+		more button is shown as a workaround for the case that the gifs
+		displayed are not tall enough for the viewport to scroll, thus not
+		activating the infinite scrolling. 
+	-->
+	<div *ngIf="!shouldLoadMore && totalGifs > gifs.length">
+		<button class="btn btn__primary" (click)="onLoadMore()">Load More</button>
+	</div>
+
+	<div *ngIf="shouldLoadMore && totalGifs > gifs.length">
+		<div class="loading-spinner"></div>
+
+		<!-- 
+			Infinite scrolling directive to load more results as a user scrolls down.
+		-->
+		<div
+			infiniteScroll
+			[infiniteScrollDistance]="1"
+			[infiniteScrollThrottle]="300"
+			(scrolled)="onLoadMore()">
+		</div>
+	</div>
+</div>
